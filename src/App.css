@@ -16,6 +16,7 @@ body {
 
 .main-container {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 .section-heading {
