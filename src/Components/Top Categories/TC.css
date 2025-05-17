@@ -1,0 +1,36 @@
+.card-content-2 {
+  max-width: 24%;
+  overflow: hidden;
+}
+
+.section2--content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.s2-img {
+  max-width: 100%;
+  transition: all 0.5s;
+}
+
+.card-content-2:hover .s2-img {
+  transform: scale(1.1);
+}
+
+.s2-title-section {
+  margin-top: 8rem;
+}
+
+/* .top-categories {
+  width: 100vw;
+} */
+
+@media (max-width: 768px) {
+  .card-content-2 {
+    max-width: 46%;
+  }
+}

@@ -1,0 +1,181 @@
+.section--1 {
+  margin-top: 15rem;
+}
+
+.section--content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr); */
+}
+
+/* Content Card */
+
+.content--card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Image Section */
+
+.media {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
+.main-img-cont {
+  height: 30rem;
+}
+
+.hover-img-cont {
+  position: absolute;
+  height: 30rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.main-img,
+.hover-img {
+  max-height: 100%;
+}
+
+.hover-img {
+  transition: all 1s;
+}
+
+.media:hover {
+  cursor: pointer;
+}
+.media:hover .hover-img-cont {
+  opacity: 1;
+  visibility: visible;
+}
+
+.media:hover .hover-img {
+  transform: scale(1.05);
+}
+
+/* Img-Buttons */
+
+.hover-btns-cont {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateY(150%);
+  color: #222;
+  gap: 1rem;
+}
+
+.media:hover .hover-btns-cont {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(150%);
+}
+
+.btn-cont {
+  width: 5rem;
+  height: 5rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.img-btns {
+  font-size: 1.6rem;
+  transform: translate(105%, 50%);
+  border-radius: 200px;
+  color: #000;
+  border: none;
+}
+
+.btn-cont:hover,
+.img-btns:hover,
+.btn-cont:hover .img-btns {
+  color: #eee;
+  background-color: #222;
+  cursor: pointer;
+}
+
+.hover-texts-cont {
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.hover-see-text,
+.hover-wish-text {
+  visibility: hidden;
+  opacity: 0;
+  color: #eee;
+  background-color: #333;
+  position: absolute;
+  transform: translate(-2rem, -9rem);
+  padding: 5px;
+  border-radius: 9px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 10;
+  width: 10rem;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn-cont:hover .hover-see-text,
+.btn-cont:hover .hover-wish-text {
+  transform: translate(-2rem, -6rem);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------------------------------- */
+/* Product Title */
+
+.s1-title {
+  color: #444;
+  font-size: 1.6rem;
+  font-family: serif;
+}
+
+.s1-title:hover {
+  cursor: pointer;
+  color: #222;
+}
+
+.s1-price:hover {
+  cursor: pointer;
+}
+
+.s1-price {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Button Section */
+
+.s1-btn,
+.s1-shopall {
+  border-radius: 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+.s1-btn {
+  width: 100%;
+}
+
+.s1-shopall {
+  width: 30%;
+}
