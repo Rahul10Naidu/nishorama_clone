@@ -1,18 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./footer.css";
+import { Context } from "../Context/Context";
 
-const getSize = () => {
-  return window.innerWidth;
-};
+// const getSize = () => {
+//   return window.innerWidth;
+// };
 
-const Footer = () => {
+const Footer = ({ id }) => {
+  const { rotate, getSize } = useContext(Context);
   const [screenSize, setScreenSize] = useState(getSize());
+
+  // const disp = useDispatch();
+  // const isRotated = useSelector((state) => state.sl.arrows[id]);
+
+  // const rotation = (event) => {
+  //   const arrowId = event.target.id;
+  //   disp(arrowRotate({ arrowId }));
+  //   console.log(arrowId);
+  // };
 
   let footerULRef = useRef(null);
   let footerQuickULRef = useRef(null);
   let footerDetailsRef = useRef(null);
-  let detArrowRef = useRef(null);
-  let quickArrowRef = useRef(null);
+
   let helpArrowRef = useRef(null);
 
   function resized() {
@@ -38,19 +48,17 @@ const Footer = () => {
 
   function footerQuickMenu() {
     const footerQuickUL = footerQuickULRef.current;
-    const quickArrow = quickArrowRef.current;
+
     if (screenSize < 576) {
       footerQuickUL.classList.toggle("f--ul-menu-hidden");
-      quickArrow.classList.toggle("arrow-reverse");
     }
   }
 
   function footerDetailsMenu() {
     const footerDetails = footerDetailsRef.current;
-    const detArrow = detArrowRef.current;
+
     if (screenSize < 576) {
       footerDetails.classList.toggle("f--ul-menu-hidden");
-      detArrow.classList.toggle("arrow-reverse");
     }
   }
 
@@ -72,14 +80,18 @@ const Footer = () => {
         <div className="inner-footer-container d-flex">
           <div className="footer-3 f--details col-xl-6 col-lg-6 col-md-7 col-sm-12 col-xs-12">
             <button
-              className="f--subH-btn"
-              onClick={() => {
+              className={`f--subH-btn`}
+              onClick={(e) => {
                 footerDetailsMenu();
+                rotate(e);
               }}
             >
               <p className="f--sub-heading">
                 Contact{" "}
-                <span ref={detArrowRef} className="f--arrow-down">
+                <span
+                  className={`f--arrow-down`}
+                  //${isRotated ? "arrow-reverse" : ""}`
+                >
                   <i className="bi bi-chevron-down"></i>
                 </span>
               </p>
@@ -151,13 +163,15 @@ const Footer = () => {
           <div className="footer-3 f--quick-links col-xl-2 col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <button
               className="f--subH-btn"
-              onClick={() => {
+              data-id="arrow-2"
+              onClick={(e) => {
                 footerQuickMenu();
+                rotate(e);
               }}
             >
               <p className="f--l f--sub-heading">
                 Quick Links{" "}
-                <span ref={quickArrowRef} className="f--arrow-down">
+                <span className={`f--arrow-down`}>
                   <i className="bi bi-chevron-down"></i>
                 </span>
               </p>

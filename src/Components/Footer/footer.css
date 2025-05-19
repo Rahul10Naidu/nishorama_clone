@@ -189,6 +189,10 @@
   width: 100%;
 }
 
+.arrow-up {
+  transform: rotate(180deg);
+}
+
 /* ------------------------------------------------------------------------ */
 /* Footer BG IMAGE */
 
@@ -265,6 +269,7 @@
   .f--arrow-down {
     visibility: visible;
     opacity: 1;
+    transition: all 0.3s;
   }
 
   .f--help {

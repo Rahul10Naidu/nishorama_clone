@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Header from "./Components/Header";
 import "./App.css";
 import HeroSection from "./Components/Hero Section/HeroSection";
@@ -9,37 +9,48 @@ import Afreen from "./Components/Nishorama Young/Afreen";
 import Slider from "./Components/Slider/Slider";
 import Footer from "./Components/Footer/Footer";
 import footerImg from "./Components/img/footer/Footer-BG.png";
+import { Context, ContextProvider } from "./Components/Context/Context";
+import SearchHeader from "./Components/Search Header/SearchHeader";
 
 const App = () => {
+  // const { isSearchActive } = useContext(Context);
+  // ${isSearchActive ? "main-container-locked" : ""}
+
   return (
-    <div className="main-container">
-      <Header />
-      <HeroSection />
-      <DontPutNazar />
-      <TopCategories />
-      <NishoramaYoung />
-      <Afreen />
+    <div className={`main-container `}>
+      <ContextProvider>
+        <Header />
+        <SearchHeader />
+        <HeroSection />
 
-      <div className="section-title s2-title-section text-center">
-        <h2 className="section-heading">Let customers speak for us</h2>
-      </div>
+        <DontPutNazar />
 
-      <Slider />
-      <Footer />
+        <TopCategories />
+        <NishoramaYoung />
+        <Afreen />
 
-      <div className="footer--end--section">
-        <div className="footer-img-cont container-fluid">
-          <img
-            className="footer-img"
-            src={footerImg}
-            alt="footer_background_image"
-          />
+        <div className="section-title s2-title-section text-center">
+          <h2 className="section-heading">Let customers speak for us</h2>
+        </div>
 
-          <div className="footer--end-section container-fluid text-center">
-            <p>&copy; 2024 Nishorama . All rights reserved.</p>
+        <Slider />
+
+        <Footer />
+
+        <div className="footer--end--section">
+          <div className="footer-img-cont container-fluid">
+            <img
+              className="footer-img"
+              src={footerImg}
+              alt="footer_background_image"
+            />
+
+            <div className="footer--end-section container-fluid text-center">
+              <p>&copy; 2024 Nishorama . All rights reserved.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </ContextProvider>
     </div>
   );
 };

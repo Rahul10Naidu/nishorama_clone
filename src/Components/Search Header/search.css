@@ -1,0 +1,214 @@
+/* Search Bar */
+
+/* Common Components */
+/* ------------------------------------------------------- */
+
+.search-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #fff;
+  padding: 2rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  transform: translateY(-15rem);
+}
+
+.search-header-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-header *:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.9);
+}
+
+.s-h-p {
+  font-size: 1.6rem;
+}
+
+.s-h-btn {
+  color: #222;
+  border: none;
+  font-size: 2rem;
+}
+
+.s-h-hover-text {
+  visibility: hidden;
+  opacity: 0;
+  color: #eee;
+  width: 10rem;
+  text-align: center;
+  background-color: #333;
+  position: absolute;
+  padding: 5px;
+  border-radius: 9px;
+  font-size: 1.2rem;
+  transform: translate(-3rem, 4rem);
+  transition: all 0.2s;
+}
+
+/* Section 1 */
+/* --------------------------------------------------------------- */
+
+.s-h-1 {
+  margin: 0 5rem;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  justify-content: space-between;
+}
+
+.s-h-1-visible {
+  visibility: visible;
+  opacity: 1;
+  position: static;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* Section-2 */
+/* ------------------------------------------------------------- */
+
+.s-h-2 {
+  margin: 0 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s-h-2-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 80%;
+}
+
+.search-bar {
+  height: 5rem;
+  text-indent: 1rem;
+  border: none;
+  border-radius: 11px;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.s-h-2-icon {
+  position: relative;
+}
+
+.s-h-2-icon:hover .s-h-hover-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-3rem, 5px);
+}
+
+/* Section-3 */
+/* -------------------------------------------------- */
+.s-h-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.search-queries-div {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+.search-queries {
+  font-size: 1.6rem;
+  color: #000;
+  font-family: inherit;
+}
+
+.search-queries::after {
+  display: block;
+  content: "";
+  width: 100%;
+  color: #000;
+}
+
+.search-queries:hover,
+.search-queries:hover .search-queries::after {
+  color: #333;
+}
+
+/* Overlay */
+/* -------------------------------------------------------------- */
+
+.overlay-sh {
+  height: 500rem;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+}
+
+.overlay-sh-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --------------------------------------------------------- */
+
+/* Media Queries */
+
+/* ---------------------------------------------------------------- */
+/* Section-2 */
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .s-h-1 {
+    margin: 0 1rem;
+  }
+  .s-h-2 {
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .s-h-2-icons,
+  .s-h-2-logo {
+    opacity: 0;
+    visibility: visible;
+    position: absolute;
+    top: -100%;
+  }
+
+  .search-bar {
+    width: 98%;
+  }
+}
+
+@media (max-width: 576px) {
+  .s-h-3 .s-h-p {
+    font-size: 1.2rem;
+  }
+
+  .search-queries-div {
+    gap: 0.8rem;
+    margin-left: 1.5rem;
+    align-items: center;
+  }
+
+  .search-queries {
+    font-size: 1.2rem;
+    color: #000;
+    font-family: inherit;
+  }
+}

@@ -10,13 +10,18 @@ html {
 
 body {
   overflow-y: scroll;
-  overflow-x: hidden;
   position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .main-container {
   overflow-x: hidden;
   width: 100vw;
+}
+
+.main-container-locked {
+  overflow-y: hidden;
 }
 
 .section-heading {
