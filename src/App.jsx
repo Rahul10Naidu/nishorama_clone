@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer";
 import footerImg from "./Components/img/footer/Footer-BG.png";
 import { Context, ContextProvider } from "./Components/Context/Context";
 import SearchHeader from "./Components/Search Header/SearchHeader";
+import ProfileWindow from "./Components/Profile Window/ProfileWindow";
 
 const App = () => {
   // const { isSearchActive } = useContext(Context);
@@ -21,6 +22,7 @@ const App = () => {
       <ContextProvider>
         <Header />
         <SearchHeader />
+        <ProfileWindow />
         <HeroSection />
 
         <DontPutNazar />

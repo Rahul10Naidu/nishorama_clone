@@ -15,6 +15,17 @@ body {
   overflow-x: hidden;
 }
 
+.fcc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc {
+  display: flex;
+  align-items: center;
+}
+
 .main-container {
   overflow-x: hidden;
   width: 100vw;

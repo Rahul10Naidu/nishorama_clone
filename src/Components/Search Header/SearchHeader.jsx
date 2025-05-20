@@ -50,7 +50,7 @@ const SearchHeader = () => {
   }, [isSearchActive]);
 
   return (
-    <div>
+    <div className="search-container">
       <div
         ref={searchHeaderRef}
         className={`search-header container-fluid d-flex flex-column gap-5 ${
@@ -87,19 +87,19 @@ const SearchHeader = () => {
           <div className="s-h-2-sub d-flex gap-3 s-h-2-icons">
             <div className="s-h-2-icon">
               <button className="s-h-btn s-h-profile-btn btn btn-outline-dark">
-                <i class="bi bi-person-circle"></i>
+                <i className="bi bi-person-circle"></i>
               </button>
               <div className="s-h-hover-text">Profile</div>
             </div>
             <div className="s-h-2-icon">
               <button className="s-h-btn s-h-heart-btn btn btn-outline-dark">
-                <i class="bi bi-heart"></i>
+                <i className="bi bi-heart"></i>
               </button>
               <div className="s-h-hover-text">Wishlist</div>
             </div>
             <div className="s-h-2-icon">
               <button className="s-h-btn s-h-cart-btn btn btn-outline-dark">
-                <i class="bi bi-bag"></i>
+                <i className="bi bi-bag"></i>
               </button>
               <div className="s-h-hover-text">To Cart</div>
             </div>

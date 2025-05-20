@@ -1,0 +1,439 @@
+.profile-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.profile-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Profile-Box */
+/* ------------------------------------------------------------------ */
+
+.profile-box {
+  transform: translate(20%, 25%);
+  display: flex;
+  flex-direction: row;
+  width: 91.2rem;
+  background-image: linear-gradient(180deg, #431116, #6e1d27);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background-size: cover;
+  pointer-events: all;
+  padding: 2rem;
+  gap: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-box-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-box *:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.9);
+}
+
+.close-profile-btn {
+  color: #fff;
+  background-color: transparent;
+  font-size: 2rem;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  border: 50%;
+  background-color: none;
+}
+
+.close-profile-btn:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+/* Profile Sections */
+/* -------------------------------------------------------- */
+
+/* .pf--2 {
+  border: 1px solid black;
+} */
+
+/* Section-1 */
+/* -------------------------------------------------------------------- */
+
+.pf--section-1 {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  gap: 1rem;
+}
+
+.pf-s1-icons {
+  width: 25%;
+}
+
+.pf-s1-img {
+  max-width: 100%;
+}
+
+.pf-nish-logo {
+  max-width: 150%;
+}
+
+.pf-kwik-logo {
+  max-width: 50%;
+}
+
+.pf-s1-heading {
+  font-size: 2.4rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  margin: 2rem 0 4rem 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.pf-s1-features {
+  gap: 1rem;
+  width: 90%;
+  justify-content: center;
+}
+
+.first-box {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.dots {
+  display: flex;
+  position: absolute;
+  right: 50%;
+  transform: translate(40%, -150%);
+  gap: 1rem;
+}
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.dot-active {
+  background-color: white;
+}
+
+.pf-s1-feature-box {
+  border-radius: 11px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 3rem 2rem;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-s1-features-img-box {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.375rem;
+  border: 0.6px solid rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16) inset;
+  margin-bottom: 1rem;
+}
+
+.pf-s1-feature-box h4 {
+  font-size: 1.2rem;
+}
+
+.pf-s1-feature-box p {
+  font-size: 0.8rem;
+}
+
+/* Section--2 */
+/* ---------------------------------------------------------------------- */
+
+.pf--section-2 {
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  width: 35%;
+  position: relative;
+}
+
+.pf-s2-mainbox {
+  flex-direction: column;
+  width: 100%;
+}
+
+.pf-s2-mainbox h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.pf-s2-input-box {
+  width: 80%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pf-s2-input {
+  width: 100%;
+  height: 4rem;
+  text-indent: 1rem;
+  border: none;
+  border-radius: 11px;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pf-s2-input-box *:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.9);
+}
+
+.pf-s2-check-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pf-s2-check-box label {
+  font-size: 1rem;
+}
+
+/* SUBMIT BTN -------------------------------------- */
+
+.pf-s2-submit-box {
+  width: 80%;
+  background-color: #431116;
+  color: #fff;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.pf-submit-btn {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Footer ------------------------------------------------------------------------ */
+.pf-s2-footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.pf-s2-footer p {
+  margin: 0;
+  color: #222;
+}
+
+.pf-s2-footer a {
+  color: #555;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+  .close-profile-btn {
+    transform: translate(0%, -100%);
+  }
+}
+
+@media (max-width: 786px) {
+  .profile-box {
+    gap: 2rem;
+  }
+  .pf--section-1 {
+    width: 55%;
+  }
+
+  .pf-s1-heading {
+    font-size: 2rem;
+  }
+
+  .pf-s1-features {
+    gap: 2rem;
+  }
+
+  .pf-s1-feature-box {
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 2rem 1rem;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pf--section-2 {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .close-profile-btn {
+    transform: translate(0%, 0%);
+  }
+  .profile-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    background-image: linear-gradient(180deg, #431116, #6e1d27);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background-size: cover;
+    pointer-events: all;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .pf--section-1,
+  .pf--section-2 {
+    width: 100%;
+  }
+
+  .pf-s1-heading {
+    font-size: 1.6rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .pf-s1-features {
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Slider Function in Box */
+  /* ------------------------------------------------------------------------------------ */
+
+  .first-box {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    position: relative;
+    display: flex;
+  }
+
+  .p-slide {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    visibility: 0;
+  }
+
+  .p-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .p-h4-cont {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+  }
+
+  /* ------------------------------------------------------------------------------------ */
+
+  .pf-s1-feature-box {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    flex-direction: row;
+    padding: 0.3rem;
+    padding: 0.5rem;
+  }
+
+  .pf-s1-features-img-box,
+  .pf-s1-feature-box h4 {
+    margin-bottom: 0;
+  }
+
+  .pf-s1-feature-box p {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .feature-box-visible {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    width: 80%;
+  }
+
+  .pf--section-2 {
+    padding: 0.5rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pf-s2-input-box {
+    width: 100%;
+  }
+
+  .pf-s2-footer {
+    position: static;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .profile-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    background-image: linear-gradient(180deg, #431116, #6e1d27);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background-size: cover;
+    pointer-events: all;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .p-h4-cont {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+  }
+}

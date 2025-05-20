@@ -1,13 +1,20 @@
 /* Search Bar */
 
 /* Common Components */
+
+.search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+}
 /* ------------------------------------------------------- */
 
 .search-header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 10000;
   background-color: #fff;
   padding: 2rem 0;
   opacity: 0;
@@ -89,15 +96,16 @@
 
 .search-bar {
   width: 80%;
-}
-
-.search-bar {
   height: 5rem;
   text-indent: 1rem;
   border: none;
   border-radius: 11px;
   font-family: inherit;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar::placeholder {
+  font-size: 1.6rem;
 }
 .s-h-2-icon {
   position: relative;
@@ -145,11 +153,11 @@
 /* -------------------------------------------------------------- */
 
 .overlay-sh {
-  height: 500rem;
+  height: 100vw;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  z-index: 9998;
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
   top: 0;

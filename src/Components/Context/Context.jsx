@@ -10,8 +10,17 @@ const getSize = () => {
 export const ContextProvider = (props) => {
   const [screenWidth, setScreenWidth] = useState(getSize());
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isProfileActive, setIsProfileActive] = useState(false);
 
   const body = document.body;
+
+  const stopScrolling = (state) => {
+    if (state === true) {
+      body.style.overflowY = "hidden";
+    } else {
+      body.style.overflowY = "auto";
+    }
+  };
 
   //----------------------------------------------------------------------------------------------------
   //Setting Screen Width
@@ -41,18 +50,31 @@ export const ContextProvider = (props) => {
   };
 
   // Search Header popping up
+  // -------------------------------------------------------
 
   const searchHeaderFunction = () => {
     setIsSearchActive(!isSearchActive);
   };
 
   useEffect(() => {
-    if (isSearchActive === true) {
-      body.style.overflowY = "hidden";
-    } else {
-      body.style.overflowY = "auto";
-    }
+    stopScrolling(isSearchActive);
   }, [isSearchActive]);
+
+  // ---------------------------------------------------------------
+
+  // Profile Box Activation
+
+  const profileBoxActivation = () => {
+    setIsProfileActive(!isProfileActive);
+  };
+
+  useEffect(() => {
+    stopScrolling(isProfileActive);
+
+    return () => {
+      stopScrolling();
+    };
+  }, [isProfileActive]);
 
   return (
     <Context.Provider
@@ -63,6 +85,8 @@ export const ContextProvider = (props) => {
         searchHeaderFunction,
         isSearchActive,
         setIsSearchActive,
+        isProfileActive,
+        profileBoxActivation,
       }}
     >
       {props.children}

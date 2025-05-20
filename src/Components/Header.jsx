@@ -12,7 +12,7 @@ const Header = () => {
   const [MenuOpen, setMenuOpen] = useState(true);
 
   // Search Header ---------------------------------------------------------------
-  const { searchHeaderFunction } = useContext(Context);
+  const { searchHeaderFunction, profileBoxActivation } = useContext(Context);
 
   function closeMenu() {
     const menuBtn = document.querySelector(".menu-btn");
@@ -187,7 +187,7 @@ const Header = () => {
           <div className="uph-3 icons-uph d-flex gap-5 align-items-center justify-content-end">
             <div className="uph3-icon profile-btn-cont">
               <button
-                onClick={() => searchHeaderFunction()}
+                onClick={() => profileBoxActivation()}
                 className=" profile-btn btn d-flex align-items-center justify-content-center"
               >
                 <svg
