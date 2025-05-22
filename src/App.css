@@ -26,6 +26,11 @@ body {
   align-items: center;
 }
 
+.content-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
 .main-container {
   overflow-x: hidden;
   width: 100vw;

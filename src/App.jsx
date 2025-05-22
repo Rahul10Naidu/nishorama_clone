@@ -12,6 +12,7 @@ import footerImg from "./Components/img/footer/Footer-BG.png";
 import { Context, ContextProvider } from "./Components/Context/Context";
 import SearchHeader from "./Components/Search Header/SearchHeader";
 import ProfileWindow from "./Components/Profile Window/ProfileWindow";
+import ProductWindow from "./Components/Product Window/ProductWindow";
 
 const App = () => {
   // const { isSearchActive } = useContext(Context);
@@ -28,6 +29,7 @@ const App = () => {
         <DontPutNazar />
 
         <TopCategories />
+        <ProductWindow />
         <NishoramaYoung />
         <Afreen />
 

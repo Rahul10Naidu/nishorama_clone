@@ -1,0 +1,618 @@
+.product-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+}
+
+.product-box {
+  width: 85%;
+  border-radius: 11px;
+  z-index: 9999;
+  background-color: #fff;
+  position: relative;
+  overflow: scroll;
+}
+
+.product-close-btn {
+  position: absolute;
+  color: #000;
+  background-color: transparent;
+  font-size: 2rem;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-50%);
+}
+
+.pb-section {
+  height: 50rem;
+}
+
+.pb-s1 {
+  width: 45%;
+  overflow: hidden;
+  position: relative;
+}
+
+.pr-slider {
+  display: flex;
+  width: 400%;
+  transition: all 0.3s;
+  flex-direction: row-reverse;
+}
+
+.pr-img {
+  max-width: 100%;
+}
+
+/* Section-1 Navigation Btns */
+/* ---------------------------------------------------------------------------------- */
+.pr-btn {
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+}
+
+.pr-nav-left,
+.pr-nav-right {
+  position: absolute;
+  top: 50%;
+  padding: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #222;
+  transition: all 0.3s;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pr-nav-right {
+  right: 5%;
+}
+
+.pr-nav-left {
+  left: 5%;
+}
+
+.pr-nav-left:hover .pr-btn,
+.pr-nav-right:hover .pr-btn {
+  color: #222;
+}
+
+.pr-nav-left:hover,
+.pr-nav-right:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.pb-s1:hover .pr-nav-left,
+.pb-s1:hover .pr-nav-right {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.pb-s2 {
+  width: 55%;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  overflow-y: scroll;
+}
+
+.pb-s2-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 40%;
+  width: 100%;
+  margin-top: 2rem;
+  gap: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #000;
+}
+
+.pb-link-h2 {
+  font-size: 3rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.pb-link-h2:hover,
+.pb-link-h2:active {
+  color: #444;
+}
+
+.pb-price {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+.pb-desc {
+  font-size: 1.6rem;
+}
+
+.pb-link-p {
+  font-size: 1.6rem;
+  color: #444;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Quantity Left */
+.pb-s2-radio {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+}
+
+.pb-s2-greendot {
+  display: flex;
+  align-items: center;
+  color: green;
+}
+
+.pb-s2-greendot::before {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 1rem;
+}
+/* -------------------------------------------------------------------------- */
+
+/* Size - Radio Buttons */
+.input-box {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 11px;
+  background-color: #ddd;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.input-box:hover,
+.pb-radio-label:hover {
+  cursor: pointer;
+}
+
+.pb-radio-btn {
+  height: 1px;
+  width: 1px;
+  border-radius: 0%;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.pb-radio-label {
+  color: #000;
+  font-size: 2rem;
+}
+
+.input-box:has(.pb-radio-btn:checked) {
+  background-color: #222;
+}
+
+.pb-radio-btn:checked + .pb-radio-label {
+  color: #eee;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Section-3 */
+.pb-s2-cart {
+  height: 30%;
+  width: 100%;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.pb-s2-cart-h3 {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.pb-s2-quantity {
+  width: 100%;
+  gap: 1rem;
+}
+
+.pb-quantity-cont {
+  width: 35%;
+  height: 100%;
+}
+
+.pb-addBtn,
+.pb-minusBtn {
+  font-size: 3.2rem;
+  color: #222;
+}
+
+.pb-addBtn:hover,
+.pb-minusBtn:hover {
+  color: #444;
+}
+
+.pb-product-quantity {
+  font-size: 2.4rem;
+  width: 5rem;
+  height: 100%;
+}
+
+.pb-Btn-cont {
+  background-color: #ddd;
+  border-radius: 9px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.pb-Btn-cont:hover {
+  transform: scale(1.1);
+}
+
+.pb-Btn-cont:hover {
+  background-color: #fff;
+}
+
+.pb-add-sec {
+  width: 65%;
+}
+
+.pb-add-link {
+  width: 100%;
+}
+.pb-buy {
+  width: 100%;
+}
+
+.pb-buy-link {
+  width: 100%;
+}
+
+.pb-buy-btn {
+  width: 100%;
+}
+
+/* ------------------------------------------ */
+/* Media Queries */
+
+@media (max-width: 992px) {
+  .product-box {
+    width: 78%;
+    gap: 1rem;
+  }
+
+  .pb-s1 {
+    width: 45%;
+  }
+
+  .pr-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 480%;
+    transition: all 0.3s;
+    flex-direction: row-reverse;
+  }
+
+  .pr-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pr-img {
+    max-width: 120%;
+  }
+
+  .pb-s2 {
+    width: 55%;
+
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0.5rem;
+    overflow-y: scroll;
+  }
+
+  .pb-s2-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 40%;
+    width: 100%;
+    margin-top: 2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+  }
+
+  .pb-link-h2 {
+    font-size: 2.4rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .pb-link-h2:hover,
+  .pb-link-h2:active {
+    color: #444;
+  }
+
+  .pb-price {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .pb-desc {
+    font-size: 1.2rem;
+  }
+
+  .pb-link-p {
+    font-size: 1.2rem;
+    color: #444;
+  }
+
+  /* ---------------------------------------- */
+  /* Size - Radio Buttons */
+
+  .input-box-cont {
+    margin: auto;
+  }
+
+  .input-box {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 11px;
+    background-color: #ddd;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .pb-radio-label {
+    color: #000;
+    font-size: 1.6rem;
+  }
+
+  /* -------------------------------------- */
+
+  .pb-s2-cart {
+    height: 30%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .pb-s2-cart-h3 {
+    align-self: flex-start;
+    margin-left: 3rem;
+  }
+
+  .pb-s2-quantity {
+    gap: 0rem;
+  }
+
+  .pb-addBtn,
+  .pb-minusBtn {
+    font-size: 2.4rem;
+    color: #222;
+  }
+
+  .pb-product-quantity {
+    font-size: 2rem;
+    width: 5rem;
+    height: 100%;
+  }
+
+  .pb-Btn-cont:hover {
+    transform: scale(1.05);
+  }
+
+  .pb-add-sec {
+    width: 50%;
+  }
+
+  .pb-add-link {
+    width: 80%;
+  }
+
+  .pb-buy-link {
+    width: 80%;
+  }
+
+  .pb-buy-btn {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+}
+
+/* ----------------------------------------- */
+@media (max-width: 786px) {
+  .product-box {
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .product-close-btn {
+    color: #fff;
+    transform: translate(-50%, 50%);
+    z-index: 1002;
+    font-size: 2.4rem;
+  }
+
+  .pb-s1 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pb-s2 {
+    width: 100%;
+
+    padding: 2rem;
+  }
+
+  .pb-s2-text {
+    margin-top: 4rem;
+  }
+
+  .pr-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400%;
+
+    transition: all 0.3s;
+    flex-direction: row-reverse;
+  }
+
+  .pr-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pr-img {
+    max-width: 100%;
+  }
+}
+
+/* ------------------------------------------- */
+
+@media (max-width: 576px) {
+  .product-box {
+    width: 80%;
+    height: auto;
+    overflow-y: scroll;
+  }
+
+  .pb-s1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .pb-s2 {
+    width: 100%;
+    height: 10%;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .pb-s2-text {
+    margin-top: 0rem;
+  }
+
+  .pb-s2-text,
+  .pb-s2-radio {
+    height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .pb-s2 {
+    width: 100%;
+    height: 70%;
+    padding: 1rem;
+    z-index: 1003;
+    gap: 1rem;
+  }
+
+  .pb-s1 {
+    width: 100%;
+    height: 60%;
+  }
+
+  .product-box {
+    width: 80%;
+    height: 120%;
+
+    overflow-y: scroll;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .pb-radio-label {
+    font-size: 1rem;
+  }
+
+  .input-box {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .pb-addBtn,
+  .pb-minusBtn {
+    font-size: 2.4rem;
+  }
+
+  .pb-s2-cart {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .pb-s2 {
+    height: 60%;
+    gap: 1rem;
+  }
+
+  .pb-s1 {
+    height: 40%;
+  }
+
+  .product-box {
+    width: 80%;
+    height: 100%;
+
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .pb-radio-label {
+    font-size: 1rem;
+  }
+
+  .input-box {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .pb-addBtn,
+  .pb-minusBtn {
+    font-size: 2.4rem;
+  }
+
+  .pb-add-sec {
+    width: 80%;
+    height: 80%;
+  }
+
+  .pb-add-link {
+    width: 80%;
+    font-size: 0.5rem;
+  }
+
+  .pb-buy-btn {
+    font-size: 1.2rem;
+  }
+}

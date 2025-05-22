@@ -67,7 +67,6 @@ const ProfileWindow = () => {
 
     const slides = slider.querySelectorAll(".p-slide");
     const dots = dotCont.querySelectorAll(".dot");
-    console.log(dots);
 
     let i = 0;
     function kk() {
@@ -171,9 +170,9 @@ const ProfileWindow = () => {
                 ref={dotContRef}
                 className="dots first-box feature-box-visible active-feature-box"
               >
-                <div id="0" class="dot"></div>
-                <div id="1" class="dot"></div>
-                <div id="2" class="dot"></div>
+                <div id="0" className="dot"></div>
+                <div id="1" className="dot"></div>
+                <div id="2" className="dot"></div>
               </div>
               <div className="pf-s1-feature-box">
                 <div className="pf-s1-features-img-box fcc">

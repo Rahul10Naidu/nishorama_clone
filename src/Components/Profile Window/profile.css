@@ -22,7 +22,7 @@
 /* ------------------------------------------------------------------ */
 
 .profile-box {
-  transform: translate(20%, 25%);
+  transform: translate(12vw, 20vh);
   display: flex;
   flex-direction: row;
   width: 91.2rem;
@@ -261,16 +261,30 @@
 }
 
 /* Media Queries */
+/* ----------------------------------------------------------------- */
 
+@media (max-width: 1100px) {
+  .profile-box {
+    transform: translate(12vw, 20vh);
+    width: 80rem;
+  }
+}
 @media (max-width: 1000px) {
   .close-profile-btn {
     transform: translate(0%, -100%);
+  }
+
+  .profile-box {
+    transform: translate(6vw, 20vh);
+    width: 70rem;
   }
 }
 
 @media (max-width: 786px) {
   .profile-box {
     gap: 2rem;
+    transform: translate(8vw, 20vh);
+    width: 60rem;
   }
   .pf--section-1 {
     width: 55%;
@@ -300,12 +314,21 @@
     width: 45%;
   }
 }
+/* ------------------------------------------------------------------------------------ */
+
+@media (max-width: 660px) {
+  .profile-box {
+    transform: translate(3vw, 20vh);
+    width: 55rem;
+  }
+}
 
 @media (max-width: 576px) {
   .close-profile-btn {
     transform: translate(0%, 0%);
   }
   .profile-box {
+    transform: translate(8vw, 8vh);
     position: relative;
     display: flex;
     flex-direction: column;

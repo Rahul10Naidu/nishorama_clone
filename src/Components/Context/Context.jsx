@@ -11,6 +11,7 @@ export const ContextProvider = (props) => {
   const [screenWidth, setScreenWidth] = useState(getSize());
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isProfileActive, setIsProfileActive] = useState(false);
+  const [isProdBoxAct, setIsProdBoxAct] = useState(false);
 
   const body = document.body;
 
@@ -75,6 +76,19 @@ export const ContextProvider = (props) => {
       stopScrolling();
     };
   }, [isProfileActive]);
+
+  // Product Box Activation
+  const handleProductBox = () => {
+    setIsProdBoxAct(!isProdBoxAct);
+  };
+
+  useEffect(() => {
+    stopScrolling(isProdBoxAct);
+
+    return () => {
+      stopScrolling();
+    };
+  }, [isProdBoxAct]);
 
   return (
     <Context.Provider
