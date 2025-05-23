@@ -2,63 +2,28 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "./footer.css";
 import { Context } from "../Context/Context";
 
-// const getSize = () => {
-//   return window.innerWidth;
-// };
+let bodyW = document.body.getBoundingClientRect().width;
 
-const Footer = ({ id }) => {
+const Footer = () => {
   const { rotate, getSize } = useContext(Context);
   const [screenSize, setScreenSize] = useState(getSize());
 
-  // const disp = useDispatch();
-  // const isRotated = useSelector((state) => state.sl.arrows[id]);
-
-  // const rotation = (event) => {
-  //   const arrowId = event.target.id;
-  //   disp(arrowRotate({ arrowId }));
-  //   console.log(arrowId);
-  // };
+  const innerFooterContRef = useRef(null);
 
   let footerULRef = useRef(null);
   let footerQuickULRef = useRef(null);
   let footerDetailsRef = useRef(null);
-
-  let helpArrowRef = useRef(null);
 
   function resized() {
     const footerUL = footerULRef.current;
     const footerQuickUL = footerQuickULRef.current;
     const footerDetails = footerDetailsRef.current;
     setScreenSize(getSize);
+
     if (screenSize < 576) {
       footerUL.classList.add("f--ul-menu-hidden");
       footerQuickUL.classList.add("f--ul-menu-hidden");
       footerDetails.classList.add("f--ul-menu-hidden");
-    }
-  }
-
-  function footerMenu() {
-    const footerUL = footerULRef.current;
-    const helpArrow = helpArrowRef.current;
-    if (screenSize < 576) {
-      footerUL.classList.toggle("f--ul-menu-hidden");
-      helpArrow.classList.toggle("arrow-reverse");
-    }
-  }
-
-  function footerQuickMenu() {
-    const footerQuickUL = footerQuickULRef.current;
-
-    if (screenSize < 576) {
-      footerQuickUL.classList.toggle("f--ul-menu-hidden");
-    }
-  }
-
-  function footerDetailsMenu() {
-    const footerDetails = footerDetailsRef.current;
-
-    if (screenSize < 576) {
-      footerDetails.classList.toggle("f--ul-menu-hidden");
     }
   }
 
@@ -74,21 +39,68 @@ const Footer = ({ id }) => {
     };
   }, [screenSize]);
 
+  // Redefined Arrow Function ------------------------------------------------------
+
+  function rev(e) {
+    let uniqueId = e.currentTarget.dataset.id;
+
+    const arrows =
+      innerFooterContRef.current.querySelectorAll(".f--arrow-down");
+
+    let targetArrow;
+
+    arrows.forEach((arrow) => {
+      if (arrow.dataset.id === uniqueId) {
+        targetArrow = arrow;
+      }
+      return targetArrow;
+    });
+
+    if (screenSize < 576) {
+      targetArrow.classList.toggle("arrow-reverse");
+    }
+  }
+
+  function showMenu(e) {
+    let uniqueId = e.currentTarget.dataset.id;
+
+    // console.log(uniqueId);
+
+    const menus =
+      innerFooterContRef.current.querySelectorAll(".f--sub-section");
+
+    let targetMenu;
+
+    menus.forEach((menu) => {
+      if (menu.dataset.id === uniqueId) {
+        targetMenu = menu;
+      }
+      return targetMenu;
+    });
+
+    if (screenSize < 576) {
+      targetMenu.classList.toggle("f--ul-menu-hidden");
+    }
+  }
+
   return (
     <div className="outer-footer-cont">
       <div className="footer container-fluid ">
-        <div className="inner-footer-container d-flex">
+        <div ref={innerFooterContRef} className="inner-footer-container d-flex">
           <div className="footer-3 f--details col-xl-6 col-lg-6 col-md-7 col-sm-12 col-xs-12">
             <button
-              className={`f--subH-btn`}
+              data-id="1"
+              className={`f--subH-btn f--btn`}
               onClick={(e) => {
-                footerDetailsMenu();
-                rotate(e);
+                // footerDetailsMenu();
+                rev(e);
+                showMenu(e);
               }}
             >
               <p className="f--sub-heading">
                 Contact{" "}
                 <span
+                  data-id="1"
                   className={`f--arrow-down`}
                   //${isRotated ? "arrow-reverse" : ""}`
                 >
@@ -96,7 +108,11 @@ const Footer = ({ id }) => {
                 </span>
               </p>
             </button>
-            <div ref={footerDetailsRef} className="f--details-cont">
+            <div
+              ref={footerDetailsRef}
+              data-id="1"
+              className="f--details-cont f--sub-section"
+            >
               <p>
                 <span className="f--details-sub-heading">
                   Wholesale branch Address:{" "}
@@ -163,20 +179,25 @@ const Footer = ({ id }) => {
           <div className="footer-3 f--quick-links col-xl-2 col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <button
               className="f--subH-btn"
-              data-id="arrow-2"
+              data-id="2"
               onClick={(e) => {
-                footerQuickMenu();
-                rotate(e);
+                // footerQuickMenu();
+                rev(e);
+                showMenu(e);
               }}
             >
               <p className="f--l f--sub-heading">
                 Quick Links{" "}
-                <span className={`f--arrow-down`}>
+                <span data-id="2" className={`f--arrow-down `}>
                   <i className="bi bi-chevron-down"></i>
                 </span>
               </p>
             </button>
-            <ul ref={footerQuickULRef} className="f--ul">
+            <ul
+              data-id="2"
+              ref={footerQuickULRef}
+              className="f--ul f--sub-section"
+            >
               <li className="f--l">
                 <a
                   className="f--links"
@@ -229,22 +250,32 @@ const Footer = ({ id }) => {
             </ul>
           </div>
 
-          <div className="footer-3 f--help col-xl-2 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div
+            data-id="3"
+            className="footer-3 f--help col-xl-2 col-lg-4 col-md-4 col-sm-12 col-xs-12"
+          >
             <button
+              data-id="3"
               className="f--subH-btn"
-              onClick={() => {
-                footerMenu();
+              onClick={(e) => {
+                // footerMenu();
+                rev(e);
+                showMenu(e);
               }}
             >
               <p className="f--l f--sub-heading">
                 Help{" "}
-                <span ref={helpArrowRef} className="f--arrow-down">
+                <span data-id="3" className="f--arrow-down">
                   <i className="bi bi-chevron-down"></i>
                 </span>
               </p>
             </button>
 
-            <ul ref={footerULRef} className="f--ul f--ul-help">
+            <ul
+              data-id="3"
+              ref={footerULRef}
+              className="f--ul f--ul-help f--sub-section"
+            >
               <li className="f--l">
                 <a
                   className="f--links"

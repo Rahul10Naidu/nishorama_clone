@@ -13,7 +13,6 @@
   z-index: 9999;
   background-color: #fff;
   position: relative;
-  overflow: scroll;
 }
 
 .product-close-btn {

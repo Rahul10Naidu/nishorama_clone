@@ -6,13 +6,13 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 .fcc {
